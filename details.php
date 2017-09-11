@@ -14,7 +14,7 @@ include "partials/header.php"  /*we add header to our page*/
 </section>
 
 <!-- element for comingBack page before -->
-<img src="img/return.png"  class="mx-auto d-block">
+<a href="index.php"><img src="img/return.png"  class="mx-auto d-block"></a>
 
 	 
 
