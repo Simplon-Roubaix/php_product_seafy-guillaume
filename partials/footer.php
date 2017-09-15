@@ -1,3 +1,4 @@
+</div>
 <div class="footer d-flex align-items-center">
 	<p class="mx-auto">Copyright by <span>Gustavo</span> & <span>Seafy</span></p>
 </div>

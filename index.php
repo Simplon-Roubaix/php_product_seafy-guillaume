@@ -1,11 +1,10 @@
-<?php 
-include 'partials/header.php'; 
-include 'library/db.php';
-
+<?php
+include 'library/includes.php';
 ?>
 
-	
-	<div class="container">
+
+
+<?php include 'partials/header.php'; ?>
 		<div class="row">
 		<?php foreach ($db as $key => $value): ?>
 			<div class="col-md-4">
@@ -15,9 +14,5 @@ include 'library/db.php';
 			<?php endforeach ?>
 		</div>
 	</div>
-
-
-
-
 <?php include 'partials/footer.php'; ?>
 
