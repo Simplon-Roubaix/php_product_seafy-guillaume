@@ -32,11 +32,11 @@ if (!empty($_POST)) {
         $token= md5(time()*5);
         $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
         $user_id = $pdo->lastInsertId();
-
+        $_SESSION['user'] = $_POST['username'];
         mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8888/Comptes/login.php?id=$user_id&token=$token");
-        $_SESSION['flash']['success'] ="Un e-mail de confirmation vous a été envoyé pour valider votre compte";
+        setFlash("Un e-mail de confirmation vous a été envoyé pour valider votre compte");
         header('Location: login.php');
-        exit();
+        die();
     }
 }
 ?>
