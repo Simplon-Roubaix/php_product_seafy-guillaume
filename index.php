@@ -1,6 +1,6 @@
 <?php 
 include 'partials/header.php'; 
-include 'db/db.php';
+include 'library/db.php';
 
 ?>
 
