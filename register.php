@@ -1,6 +1,9 @@
 <?php
 include 'library/includes.php';
 session_start();
+if(isset($_SESSION['user'])){
+    header('Location: index.php');
+}
 if (!empty($_POST)) {
     if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
         $errors['username'] = "Votre nom d'utilisateur est incorrect";
@@ -22,18 +25,17 @@ if (!empty($_POST)) {
             $errors['email'] = "Cette email est déjà utilisé";
         }
     }
-    if (empty($_POST['password']) || ($_POST['password'] != $_POST['password_confirm'])) {
+    if (empty($_POST['password']) || ($_POST['password'] != $_POST['confirm_password'])) {
         $errors['password'] = "Vous devez rentrer le même mot de passe ";
     }
     if(empty($errors)){
 
-        $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token = ?");
+        $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW()");
         $password=password_hash($_POST['password'], PASSWORD_BCRYPT);
         $token= md5(time()*5);
         $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
         $user_id = $pdo->lastInsertId();
-        $_SESSION['user'] = $_POST['username'];
-        mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8888/Comptes/login.php?id=$user_id&token=$token");
+        mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8000/Comptes/confirm.php?id=$user_id&token=$token");
         setFlash("Un e-mail de confirmation vous a été envoyé pour valider votre compte");
         header('Location: login.php');
         die();
