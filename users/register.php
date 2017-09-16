@@ -3,7 +3,7 @@
 include '../library/includes.php';
 //start session
 session_start();
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     header('Location: index.php');
 }
 if (!empty($_POST)) {
@@ -34,17 +34,17 @@ if (!empty($_POST)) {
     if (empty($_POST['password']) || ($_POST['password'] != $_POST['confirm_password'])) {
         $errors['password'] = "Vous devez rentrer le même mot de passe ";
     }
-    if(empty($errors)){
-        $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW(), confirmed= ?");
+    if (empty($errors)) {
+        $req = $pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW(), confirmed= ?");
         //hash password
-        $password=password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
         //create token for virification
-        $token= md5(time()*5);
+        $token = md5(time() * 5);
         //execute request
         $req->execute([$_POST['username'], $_POST['email'], $password, $token, false]);
         $user_id = $pdo->lastInsertId();
         //send mail
-        mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8000/confirm.php?id=$user_id&token=$token");
+        mail($_POST['email'], "Validation de votre compte", "Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8000/confirm.php?id=$user_id&token=$token");
         setFlash("Un e-mail de confirmation vous a été envoyé pour valider votre compte");
         header('Location: login.php');
         die();
@@ -53,7 +53,7 @@ if (!empty($_POST)) {
 ?>
 <?php include '../partials/header.php'; ?>
     <h1 class="mt-3">Inscription</h1>
-<!--if errors form-->
+    <!--if errors form-->
 <?php if (!empty($errors)): ?>
     <div class="alert alert-danger">
         <p>Vous n'avez pas rempli le formulaire correctement</p>

@@ -1,10 +1,12 @@
 <?php
 require_once '../library/includes.php';
+//start session
 session_start();
 if(isset($_SESSION['user'])){
     header('Location: index.php');
     die();
 }
+//verify entry
 if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
     $req = $pdo->prepare('SELECT * FROM users WHERE (username = :username OR email = :username) AND confirmed IS NOT NULL');
     $req->execute(['username' => $_POST['username']]);
@@ -31,7 +33,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         </div>
 
         <div class="form-group">
-            <label for="">Mot de passe</label>
+            <label for="">Mot de passe <a href="forget.php">(mot de passe oublié)</a></label>
             <input type="password" name="password" class="form-control"/>
         </div>
 

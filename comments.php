@@ -14,7 +14,7 @@ $title_page = "Comments | " . $blog->url;
     <h1><?= $blog->title; ?></h1>
     <p><?= $blog->content; ?></p>
     <p><?= $blog->date; ?></p>
-    <?php foreach ($comments as $item): ?>
+<?php foreach ($comments as $item): ?>
     <?php if ($item->online == 1): ?>
         <h2><?= $item->name; ?></h2>
         <p><?= $item->content; ?></p>
