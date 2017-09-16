@@ -30,12 +30,12 @@ if (!empty($_POST)) {
     }
     if(empty($errors)){
 
-        $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW()");
+        $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW(), confirmed= ?");
         $password=password_hash($_POST['password'], PASSWORD_BCRYPT);
         $token= md5(time()*5);
-        $req->execute([$_POST['username'], $_POST['email'], $password, $token]);
+        $req->execute([$_POST['username'], $_POST['email'], $password, $token, false]);
         $user_id = $pdo->lastInsertId();
-        mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8000/Comptes/confirm.php?id=$user_id&token=$token");
+        mail($_POST['email'],"Validation de votre compte","Afin de valider votre compte merci de cliquer sur ce lien\n\nhttp://localhost:8000/confirm.php?id=$user_id&token=$token");
         setFlash("Un e-mail de confirmation vous a été envoyé pour valider votre compte");
         header('Location: login.php');
         die();

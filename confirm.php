@@ -6,12 +6,12 @@ $req=$pdo->prepare('SELECT * FROM users WHERE id = ?');
 $req->execute([$user_id]);
 $user=$req->fetch();
 session_start();
-if($user && $user->confirmation_token == $token){
+if($user && $user->token_confirmed == $token){
 
-    $pdo->prepare('UPDATE users SET token_confirmed = NULL, created_at = NOW() WHERE id=?')->execute([$user_id]);
+    $pdo->prepare('UPDATE users SET token_confirmed = NULL, created_at = NOW(), confirmed = ? WHERE id=?')->execute([true, $user_id]);
     setFlash("Votre compte a bien été validé");
     $_SESSION['user']=$user;
-    header('Location: index.php');
+    header('Location: login.php');
     die();
 } else {
     setFlash("Vous n'êtes pas un utilisateur enregisté",'danger');
