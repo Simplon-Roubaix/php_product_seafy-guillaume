@@ -24,7 +24,7 @@ $title_page = "Comments | " . $blog->url;
     <a href="/">Revenir</a>
 <?php if (isset($_SESSION['user'])): ?>
     <h3>Ajouter un commentaire</h3>
-    <form action="new_comment.php" method="post">
+    <form action="users/comment_post.php" method="post">
         <div class="form-group">
             <label for="content">Contenu</label>
             <textarea class="form-control" id="content" name="content"></textarea>
