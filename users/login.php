@@ -1,5 +1,5 @@
 <?php
-require_once 'library/includes.php';
+require_once '../library/includes.php';
 session_start();
 if(isset($_SESSION['user'])){
     header('Location: index.php');
@@ -13,7 +13,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         if (password_verify($_POST['password'], $user->password)) {
             $_SESSION['user'] = $user;
             setFlash("Vous êtes maintenant connecté");
-            header('Location: index.php');
+            header('Location: ../index.php');
         } else {
             setFlash("Identifiant ou mot de passe incorrect");
         }
@@ -22,7 +22,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
     }
 }
 ?>
-<?php require 'partials/header.php'; ?>
+<?php require '../partials/header.php'; ?>
     <h1>Se connecter</h1>
     <form action="" method="POST">
         <div class="form-group">
@@ -38,4 +38,4 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
         <button type="submit" class="btn btn-primary">Se connecter</button>
     </form>
 
-<?php require 'partials/footer.php'; ?>
+<?php require '../partials/footer.php'; ?>

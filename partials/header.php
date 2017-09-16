@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Cars</title>
+    <title><?= $title_page; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?= BASE_URL; ?>favicon.ico"/>
@@ -28,21 +28,21 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="<?= BASE_URL; ?>blog.php">Blog</a>
             </li>
         </ul>
         <ul class="my-2 my-lg-0 navbar-nav">
             <?php if (!isset($_SESSION['user'])): ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= BASE_URL; ?>login.php">Se connecter<span
+                    <a class="nav-link" href="<?= BASE_URL; ?>users/login.php">Se connecter<span
                                 class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= BASE_URL; ?>register.php">S'enregistrer</a>
+                    <a class="nav-link" href="<?= BASE_URL; ?>users/register.php">S'enregistrer</a>
                 </li>
             <?php else: ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= BASE_URL; ?>logout.php">Se déconnecter</a>
+                    <a class="nav-link" href="<?= BASE_URL; ?>users/logout.php">Se déconnecter</a>
                 </li>
             <?php endif; ?>
         </ul>

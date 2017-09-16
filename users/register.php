@@ -1,5 +1,5 @@
 <?php
-include 'library/includes.php';
+include '../library/includes.php';
 session_start();
 if(isset($_SESSION['user'])){
     header('Location: index.php');
@@ -29,7 +29,6 @@ if (!empty($_POST)) {
         $errors['password'] = "Vous devez rentrer le même mot de passe ";
     }
     if(empty($errors)){
-
         $req=$pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW(), confirmed= ?");
         $password=password_hash($_POST['password'], PASSWORD_BCRYPT);
         $token= md5(time()*5);
