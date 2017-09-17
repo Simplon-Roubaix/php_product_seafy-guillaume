@@ -4,7 +4,7 @@ include '../library/includes.php';
 //start session
 session_start();
 if (isset($_SESSION['user'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 if (!empty($_POST)) {
     //verify entry

@@ -3,7 +3,7 @@ require_once '../library/includes.php';
 //start session
 session_start();
 if(isset($_SESSION['user'])){
-    header('Location: index.php');
+    header('Location: ../index.php');
     die();
 }
 //verify entry

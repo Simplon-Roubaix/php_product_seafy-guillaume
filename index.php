@@ -1,6 +1,5 @@
 <?php
 include 'library/includes.php';
-session_start();
 ?>
 
 
