@@ -20,9 +20,10 @@
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Navbar</a>
+    <img class="brave" src="../img/brave.svg" alt="brave">
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <h1 class="navbar-brand mr-5">Seafy & Guillaume cars</h1>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -31,6 +32,7 @@
                 <a class="nav-link" href="<?= BASE_URL; ?>blog.php">Blog</a>
             </li>
         </ul>
+
         <ul class="my-2 my-lg-0 navbar-nav">
             <?php if (!isset($_SESSION['user'])): ?>
                 <li class="nav-item active">
