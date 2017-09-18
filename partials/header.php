@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="<?= BASE_URL; ?>css/bootstrap.css">
 </head>
 <body>
-<<<<<<< HEAD
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
@@ -27,7 +26,7 @@
         <h1 class="navbar-brand mr-5">Seafy & Guillaume cars</h1>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?= BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="<?= BASE_URL; ?>blog.php">Blog</a>
@@ -60,10 +59,3 @@
     <?php endforeach; ?>
     <?php unset($_SESSION['flash']); ?>
 <?php endif; ?>
-=======
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
-    <img class="brave" src="../img/brave.svg" alt="brave">
-    <h1 class="navbar-brand ml-2">Seafy & Guillaume cars</h1>
-    <!-- /.navbar-brand -->
-</nav>
->>>>>>> duo

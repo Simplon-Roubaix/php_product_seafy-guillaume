@@ -1,4 +1,5 @@
 <?php
+$title_page = "S'enregistrer";
 // include library
 include '../library/includes.php';
 //start session
@@ -85,4 +86,4 @@ if (!empty($_POST)) {
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-<?php include 'partials/footer.php'; ?>
+<?php include '../partials/footer.php'; ?>

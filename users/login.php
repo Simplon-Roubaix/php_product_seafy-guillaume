@@ -1,4 +1,5 @@
 <?php
+$title_page = "Se connecter";
 require_once '../library/includes.php';
 //start session
 session_start();
