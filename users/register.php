@@ -39,7 +39,7 @@ if (!empty($_POST)) {
         $req = $pdo->prepare("INSERT INTO users SET username = ?, email = ?, password = ?, token_confirmed = ?, created_at = NOW(), confirmed= ?");
         //hash password
         $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        //create token for virification
+        //create token for verification
         $token = md5(time() * 5);
         //execute request
         $req->execute([$_POST['username'], $_POST['email'], $password, $token, false]);
