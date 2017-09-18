@@ -1,12 +1,11 @@
-<<<<<<< HEAD
 <?php
 include 'library/includes.php';
-=======
+
 <?php 
 include 'partials/header.php'; /*we add header to our page*/
 include 'db/db.php'; /*we add array where are our elements*/
 
->>>>>>> duo
+
 ?>
 
 
@@ -23,13 +22,12 @@ include 'db/db.php'; /*we add array where are our elements*/
 			<?php endforeach ?>
 		</div>
 	</div>
-<<<<<<< HEAD
+
 <?php include 'partials/footer.php'; ?>
-=======
 
 
 
 
 <?php include 'partials/footer.php'; ?> <!-- we add footer to our page -->
->>>>>>> duo
+
 
