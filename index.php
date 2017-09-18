@@ -1,11 +1,17 @@
+<<<<<<< HEAD
+<?php
+include 'library/includes.php';
+=======
 <?php 
 include 'partials/header.php'; /*we add header to our page*/
 include 'db/db.php'; /*we add array where are our elements*/
 
+>>>>>>> duo
 ?>
 
-	
-	<div class="container">
+
+
+<?php include 'partials/header.php'; ?>
 		<div class="row">
 		<!-- loop foreach for find "DB" and "key" & "value" of elements!  -->
 		<?php foreach ($db as $key => $value): ?>
@@ -17,9 +23,13 @@ include 'db/db.php'; /*we add array where are our elements*/
 			<?php endforeach ?>
 		</div>
 	</div>
+<<<<<<< HEAD
+<?php include 'partials/footer.php'; ?>
+=======
 
 
 
 
 <?php include 'partials/footer.php'; ?> <!-- we add footer to our page -->
+>>>>>>> duo
 
