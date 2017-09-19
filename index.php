@@ -1,24 +1,27 @@
 <?php
-$title_page = "Accueil";
-include 'library/includes.php';
-?>
 
+/**
+ * Laravel - A PHP Framework For Web Artisans
+ *
+ * @package  Laravel
+ * @author   Taylor Otwell <taylor@laravel.com>
+ */
 
+$uri = urldecode(
+    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+);
 
-<?php include 'partials/header.php'; ?>
-		<div class="row">
-		<!-- loop foreach for find "DB" and "key" & "value" of elements!  -->
-		<?php foreach ($db as $key => $value): ?>
-			<div class="index0 col-md-4 ">
-				<h2><?php echo $value['title']?></h2>  <!-- find the title and display -->
-				<a href="details.php?id=<?php echo $key ;?>">  <!-- displays the page where it is located id of array -->
-				<img src="<?php echo $value['image']?>" class="theCars rounded-circle"></a> <!-- display every picture of every $key -->
-			</div>
-			<?php endforeach ?>
-		</div>
-	</div>
+// This file allows us to emulate Apache's "mod_rewrite" functionality from the
+// built-in PHP web server. This provides a convenient way to test a Laravel
+// application without having installed a "real" web server software here.
+if ($uri !== '/' && file_exists(__DIR__.'/views'.$uri)) {
+    return false;
+}
 
+include_once 'library/includes.php';
 
+if (!isset($_GET['section']) OR $_GET['section'] == 'index')
+{
+    include_once('controller/HomeController.php');
+}
 
-
-<?php include 'partials/footer.php'; ?> <!-- we add footer to our page -->

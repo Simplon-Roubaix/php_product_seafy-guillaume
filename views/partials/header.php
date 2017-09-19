@@ -20,7 +20,7 @@
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img class="brave" src="../img/brave.svg" alt="brave">
+    <img class="brave" src="../../img/brave.svg" alt="brave">
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <h1 class="navbar-brand mr-5">Seafy & Guillaume cars</h1>
@@ -29,7 +29,7 @@
                 <a class="nav-link" href="<?= BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?= BASE_URL; ?>blog.php">Blog</a>
+                <a class="nav-link" href="<?= BASE_URL; ?>controller/BlogController.php">Blog</a>
             </li>
         </ul>
 

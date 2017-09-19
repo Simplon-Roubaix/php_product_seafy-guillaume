@@ -1,11 +1,6 @@
 
-<<<<<<< HEAD
 <?php include "library/db.php";
-include "partials/header.php"
-=======
-<?php include "db/db.php"; /*we add array where are our elements*/
-include "partials/header.php"  /*we add header to our page*/
->>>>>>> duo
+include "partials/header.php";
 ?>
 
 <!-- displays each title of each key -->
