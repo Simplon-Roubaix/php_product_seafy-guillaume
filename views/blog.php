@@ -1,4 +1,5 @@
 <?php
+include '../controller/BlogController.php';
 $title_page = "Le blog";
 session_start();
 

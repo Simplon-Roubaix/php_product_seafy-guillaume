@@ -6,12 +6,12 @@
     <title><?= $title_page; ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="<?= BASE_URL; ?>favicon.ico"/>
+    <link rel="icon" href="../favicon.ico"/>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="<?= BASE_URL; ?>css/normalize.css">
-    <link rel="stylesheet" href="<?= BASE_URL; ?>css/main.css">
-    <link rel="stylesheet" href="<?= BASE_URL; ?>css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASE_URL; ?>/css/normalize.css">
+    <link rel="stylesheet" href="<?= BASE_URL; ?>/css/main.css">
+    <link rel="stylesheet" href="<?= BASE_URL; ?>/css/bootstrap.css">
 </head>
 <body>
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
@@ -20,7 +20,7 @@
             aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <img class="brave" src="../../img/brave.svg" alt="brave">
+    <img class="brave" src="img/brave.svg" alt="brave">
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <h1 class="navbar-brand mr-5">Seafy & Guillaume cars</h1>
@@ -29,7 +29,7 @@
                 <a class="nav-link" href="<?= BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?= BASE_URL; ?>controller/BlogController.php">Blog</a>
+                <a class="nav-link" href="<?= BASE_URL; ?>/details.php">Blog</a>
             </li>
         </ul>
 
