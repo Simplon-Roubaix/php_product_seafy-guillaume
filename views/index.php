@@ -4,6 +4,6 @@ include '../library/includes.php';
 
 <?php include 'partials/header.php'; ?>
 
-<a href="après.php">blog</a>
+<a href="blog">blog</a>
 
 <?php include 'partials/footer.php'; ?>
