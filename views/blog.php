@@ -1,7 +1,6 @@
 <?php
 $title_page = "Le blog";
 session_start();
-print_r($url);
 ?>
 
 <?php include 'partials/header.php'; ?>
@@ -12,7 +11,7 @@ print_r($url);
             <h2><?= $blog->title; ?></h2>
             <p><?= $blog->content; ?></p>
             <p><?= $blog->date; ?></p>
-            <p><a class="btn btn-secondary" href="view/<?= $blog->url; ?>" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="comments/<?= $blog->url; ?>" role="button">View details &raquo;</a></p>
             <?php if($blog->online == 1): ?>
                 <p><?= $blog->nb_coms; ?> Commentaire(s)</p>
             <?php endif; ?>
