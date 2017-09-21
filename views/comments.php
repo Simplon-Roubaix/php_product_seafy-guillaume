@@ -14,7 +14,7 @@ $title_page = "Comments | " . $blog->url;
         <p><?= $item->date_commentaire; ?></p>
     <?php endif; ?>
 <?php endforeach; ?>
-    <a href="<?php echo $_SERVER['HTTP_REFERER'];?>">Revenir</a>
+    <a href="<?php echo BASE_URL;?>/blog">Revenir</a>
 <?php if (isset($_SESSION['user'])): ?>
     <h3>Ajouter un commentaire</h3>
     <form action="users/comment_post.php" method="post">

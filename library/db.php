@@ -1,8 +1,8 @@
 <?php
-$conf = 'default';
-$confdb = $databases[$conf];
+    $conf = 'default';
+    $confdb = Conf::$databases[$conf];
 try {
-    $pdo = new PDO(
+     $pdo = new PDO(
         'mysql:host=' . $confdb['host'] . ';dbname=' . $confdb['database'] . ';',
         $confdb['login'],
         $confdb['password']
@@ -14,3 +14,4 @@ try {
     echo $e->getMessage();
     die();
 }
+

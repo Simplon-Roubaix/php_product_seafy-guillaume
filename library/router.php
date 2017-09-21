@@ -1,6 +1,6 @@
 <?php
 $url = $_GET['url'];
-$url = rtrim($url,"/");
+$url = rtrim($url,"'");
 $url = explode("/", $url);
 $page = '../controller/'.$url[0].'Controller.php';
 if ($url[0]== false){

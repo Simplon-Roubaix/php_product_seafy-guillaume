@@ -2,7 +2,6 @@
 
 function get_comment($url){
     global $pdo;
-
     $bdd = $pdo->prepare("SELECT id, blog_id,name, online, comment, DATE_FORMAT(created_at, '%d/%m/%Y à %Hh%i') AS date_commentaire FROM comments WHERE url_blog=?");
     $bdd->execute([$url]);
     $comments = $bdd->fetchAll();
@@ -15,4 +14,11 @@ function get_single($url){
     $blog = $db->fetch();
     return $blog;
 
+}
+function verify_url($url){
+    global $pdo;
+    $db = $pdo->prepare("SELECT * FROM blog WHERE url = ?");
+    $db->execute([$url]);
+    $verif = $db->fetch();
+    return $verif;
 }
