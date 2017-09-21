@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule (.*) views/$1 [L]
+RewriteRule ^(.*)$ public/index.php?url=$1 [L]
